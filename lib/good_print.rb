@@ -26,14 +26,18 @@ module GoodPrint
         end
         io << gp_puts("}", level, false, end_with_comma)
       when Enumerable
-        prefix = if (defined? Set) && object.is_a?(Set)
-          "<Set>"
+        if object.is_a?(Range) && object.begin.is_a?(Time)
+          io << gp_puts("#{object.inspect}", level, trailer, end_with_comma)
+        else
+          prefix = if (defined? Set) && object.is_a?(Set)
+            "<Set>"
+          end
+          io << gp_puts("#{prefix}[", level, trailer)
+          object.each_with_index do |v, idx|
+            gp io, v, level + 1, false, idx < object.size - 1
+          end
+          io << gp_puts("]", level, false, end_with_comma)
         end
-        io << gp_puts("#{prefix}[", level, trailer)
-        object.each_with_index do |v, idx|
-          gp io, v, level + 1, false, idx < object.size - 1
-        end
-        io << gp_puts("]", level, false, end_with_comma)
       else
         io << gp_puts("#{object.inspect}", level, trailer, end_with_comma)
       end
