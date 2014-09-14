@@ -1,4 +1,4 @@
-# GoodPrint
+# Good Print
 
 Not as awesome as awesome_print. Prints objects with simple balanced indentation.
 
