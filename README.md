@@ -1,6 +1,6 @@
 # GoodPrint
 
-Not as awesome as awesome_print.
+Not as awesome as awesome_print. Prints objects with simple balanced indentation.
 
 ```ruby
 >> require 'good_print'
