@@ -9,6 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Mark Dodwell"]
   spec.email         = ["mark@mkdynamic.co.uk"]
   spec.summary       = "Not as awesome as awesome_print."
+  spec.description   = "Not as awesome as awesome_print. Prints objects with simple balanced indentation."
   spec.homepage      = ""
   spec.license       = "MIT"
 
